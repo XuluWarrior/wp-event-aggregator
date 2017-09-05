@@ -118,6 +118,7 @@ $venue['country'] = get_post_meta( $event_id, 'venue_country', true );
 $venue['zipcode'] = get_post_meta( $event_id, 'venue_zipcode', true );
 $venue['lat'] = get_post_meta( $event_id, 'venue_lat', true );
 $venue['lon'] = get_post_meta( $event_id, 'venue_lon', true );
+$venue['place'] = get_post_meta( $event_id, 'venue_place', true );
 $venue_url = esc_url( get_post_meta( $event_id, 'venue_url', true ) );
 
 if( $venue_name != '' && ( $venue_address != '' || $venue['city'] != '' ) ){
@@ -141,8 +142,14 @@ if( $venue_name != '' && ( $venue_address != '' || $venue['city'] != '' ) ){
 			echo '<p>' . implode( ", ", $venue_array ) . '</p>';
 			?>
 		</div>
-		<?php 
-		if( $venue['lat'] != '' && $venue['lon'] ){
+		<?php
+		if( $venue['place'] != '' ){
+			?><div class="map">
+			<iframe src="https://maps.google.com/maps?q=<?php echo $venue['place']?>&hl=es;z=14&output=embed" width="100%" height="350" frameborder="0" style="border:0; margin:0;" allowfullscreen></iframe>
+		</div>
+			<?php
+		}
+		elseif( $venue['lat'] != '' && $venue['lon'] ){
 			?><div class="map">
 			<iframe src="https://maps.google.com/maps?q=<?php echo $venue['lat'].",".$venue['lon'];?>&hl=es;z=14&output=embed" width="100%" height="350" frameborder="0" style="border:0; margin:0;" allowfullscreen></iframe>
 		</div>

@@ -337,6 +337,12 @@ class WP_Event_Aggregator_Cpt {
 			</tr>
 
 			<tr>
+				<td><?php _e('Google Place', 'wp-event-aggregator'); ?>:</td>
+				<td>
+					<input type="text" name="venue_place" id="venue_lat" value="<?php echo get_post_meta($post->ID, 'venue_place', true); ?>" />
+				</td>
+			</tr>
+			<tr>
 				<td><?php _e('Latitude', 'wp-event-aggregator'); ?>:</td>
 				<td>
 					<input type="text" name="venue_lat" id="venue_lat" value="<?php echo get_post_meta($post->ID, 'venue_lat', true); ?>" />
@@ -502,6 +508,7 @@ class WP_Event_Aggregator_Cpt {
 		$venue_state   = isset( $_POST['venue_state'] ) ? sanitize_text_field( $_POST['venue_state'] ) : '';
 		$venue_country = isset( $_POST['venue_country'] ) ? sanitize_text_field( $_POST['venue_country'] ) : '';
 		$venue_zipcode = isset( $_POST['venue_zipcode'] ) ? sanitize_text_field( $_POST['venue_zipcode'] ) : '';
+		$venue_place     = isset( $_POST['venue_place'] ) ? sanitize_text_field( $_POST['venue_place'] ) : '';
 		$venue_lat     = isset( $_POST['venue_lat'] ) ? sanitize_text_field( $_POST['venue_lat'] ) : '';
 		$venue_lon     = isset( $_POST['venue_lon'] ) ? sanitize_text_field( $_POST['venue_lon'] ) : '';
 		$venue_url     = isset( $_POST['venue_url'] ) ? esc_url( $_POST['venue_url'] ) : '';
@@ -532,6 +539,7 @@ class WP_Event_Aggregator_Cpt {
 		update_post_meta( $post_id, 'venue_state', $venue_state );
 		update_post_meta( $post_id, 'venue_country', $venue_country );
 		update_post_meta( $post_id, 'venue_zipcode', $venue_zipcode );
+		update_post_meta( $post_id, 'venue_place', $venue_place );
 		update_post_meta( $post_id, 'venue_lat', $venue_lat );
 		update_post_meta( $post_id, 'venue_lon', $venue_lon );
 		update_post_meta( $post_id, 'venue_url', $venue_url );
