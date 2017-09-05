@@ -25,7 +25,7 @@ if ( '' !== get_the_post_thumbnail() ){
 <a href="<?php echo esc_url( get_permalink() ) ?>">	
 	<div class="<?php echo $css_class; ?> archive-event <?php post_class(); ?>">
 		<div class="wepa_event" >
-			<div class="img_placeholder" style=" background: url('<?php echo $image_url[0]; ?>') no-repeat left top;"></div>
+			<div class="img_placeholder" style=" width: 100%; padding-bottom: 50%; background: url('<?php echo $image_url[0]; ?>') no-repeat center;"></div>
 			<div class="event_details">
 				<div class="event_date">
 					<span class="month"><?php echo date_i18n('M', $event_date) ; ?></span>
