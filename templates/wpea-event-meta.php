@@ -141,7 +141,7 @@ if( $venue_name != '' && ( $venue_address != '' || $venue['city'] != '' ) ){
 			}
 			echo '<p>' . implode( ", ", $venue_array ) . '</p>';
 			if( $venue_url != '' ){
-				echo '<p><a src="' . $venue_url . '">' . $venue_url . '</a></p>';
+				echo '<p><br/><a src="' . $venue_url . '">' . $venue_url . '</a></p>';
 			}
 			?>
 		</div>
