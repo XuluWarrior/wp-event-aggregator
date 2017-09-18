@@ -797,9 +797,9 @@
   background-size: cover !important;
   min-height: 130px;
 }
-.wpea_frontend_archive .archive-event .wepa_event{
-  height: 210px;
-}
+/*.wpea_frontend_archive .archive-event .wepa_event{*/
+  /*height: 210px;*/
+/*}*/
 
 /*
  *  Widget Style Start
